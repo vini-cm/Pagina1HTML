@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <0meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{border:1 px solid black; box-sizing: border-box;}
+        body{display:grid;
+         /**   grid-template-columns: 1fr 4fr 1fr;
+            grid tempalte-rowns: 150px;**/
+            grid-template-areas:
+            "header header header"
+            "main main sidebar"
+             ;
+        }
+        #caixinha1{
+            background-color: yellow;
+            grid-area: header;
+        }
+        #caixa1{background-color:orange;};
+        #caixa2{background-color:lightgreen;};
+        #caixa3{background-color:lightblue;};
+        #caixa4{background-color:violet;};
+    </style>
+</head>
+<body>
+        <div class="box" id+"caixa1">1</div>
+        <div class="box" id+"caixa2">2</div>
+        <div class="box" id+"caixa3">3</div>
+        <div class="box" id+"caixa4">4</div>
+        <div class="box" id+"caixa5">5</div>
+
+</body>
+</html>
