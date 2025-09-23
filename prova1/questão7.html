@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <Style>
+         body{
+            transform: rotate(360deg);
+            animation: movimento 100s linear infinite;
+            justify-content: space-between;
+
+        }
         .meio{
             
         }
         .baixo{
             display: flex;
+            flex-flow: row-reverse;
         }
         .container{
             display: flex;
@@ -55,14 +62,11 @@
             border-radius: 50%;
            
         }
-        body{
-            transform: rotate(360deg);
-            animation: movimento 100s linear infinite;
-        }
+       
         
     </Style>
 </head>
-<body class="tela">
+<body>
     <div class="container">
             <div class="box" id="item1"></div>
             <div class="box" id="item2"></div>
