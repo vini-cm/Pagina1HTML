@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texto</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <h1 id="tituloA">Texto</h1>
+    <h1 id="tituloB">Texto</h1>
+    <h1 id="tituloC">Texto</h1>
+    
+    <script>
+       i= prompt("Entre com um número");
+       let tituloA=document.querySelector("#tituloA");
+       let tituloB=document.getElementById("tituloB");
+       let titulos=document.querySelectorAll("h1")
+
+
+       tituloA.style.color="red";
+       tituloB.style.color="blue";
+
+       for(let i=0;i<titulos.length;i++){
+        titulos[i].innerText=i;
+       }
+
+       titulos.forEach((e,i) => {
+            e.innerHTML+="-"+i;
+       });
+    </script>
+</body>
+</html>
