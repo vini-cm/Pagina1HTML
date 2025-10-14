@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador IMC</title>
+    <style>
+        input, button {
+            margin: 5px;
+        }
+        img {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculador IMC</h1>
+    <input type="number" name="peso" id="peso" placeholder="Peso (kg)">
+    <input type="number" name="altura" id="altura" placeholder="Altura (m)">
+    <button id="calcular">Calcular IMC</button>
+    <img src="./imgs/perfil.jpg" alt="">
+
+    <script>
+        let btnCalcular = document.getElementById("calcular");
+
+        btnCalcular.addEventListener("click", () => {
+            let peso = parseFloat(document.getElementById("peso").value);
+            let altura = parseFloat(document.getElementById("altura").value);
+            let img = document.querySelector("img");
+
+            if(isNaN(peso) || isNaN(altura) || altura === 0){
+                alert("Por favor, insira valores válidos para peso e altura.");
+                return;
+            }
+
+            let imc = peso / (altura * altura);
+            imc = imc.toFixed(2);
+
+            let resultado = "";
+            //classificação do IMC set image ./imgs
+            if(imc < 18.5){
+                resultado = "Abaixo do peso";
+                img.src = "./imgs/abaixo_peso.png";
+            } else if(imc >= 18.5 && imc < 24.9){
+                resultado = "Peso normal";
+                img.src = "./imgs/peso_normal.png";
+            } else if(imc >= 25 && imc < 29.9){
+                resultado = "Sobrepeso";
+                img.src ="./imgs/sobrepeso.png";
+            } else if (imc >= 30 && imc < 34.9){
+                resultado = "Obesidade 1";
+                img.src = "./imgs/obesidade1.png";
+            } else if (imc >= 35 && imc < 39.9){
+                resultado = "Obesidade 2";
+                img.src = "./imgs/obesidade2.png";
+            } else {
+                resultado = "Obesidade 3";
+                img.src = "./imgs/obesidade3.png";
+            }
+
+           
+        });
+        //calcula quantos quilos a pessoa precisa perder ou ganhar para atingir o peso ideal (IMC 24.9)
+        function calcularPesoIdeal(imc) {
+            const pesoIdeal = 24.9 * (altura * altura);
+            const diferenca = pesoIdeal - peso;
+            if (diferenca > 0) {
+                return `Você precisa ganhar ${diferenca.toFixed(2)} kg para atingir o peso ideal.`;
+            } else {
+                return `Você precisa perder ${Math.abs(diferenca).toFixed(2)} kg para atingir o peso ideal.`;
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
