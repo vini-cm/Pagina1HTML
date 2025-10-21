@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numero Aleatorio</title>
+    <style>
+        input, button {
+            margin: 5px;
+            display: block;
+        }
+        img {
+            height: 150px;
+            display: block;
+            margin-top: 10px;
+        }
+        #resultado, #pesoIdeal {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aleatorio entre intervalos</h1>
+    <input type="number" name="primeiro" id="primeiro" placeholder="">
+    <input type="number" name="segundo" id="segundo" placeholder="">
+    <button id="calcular">Gerar Número</button>
+
+    <div id="resultado"></div>
+    <script>
+
+    let btnNumber = document.getElementById("calcular");
+
+    btnNumber.addEventListener("click", () => {
+        const primeiro = parseFloat(document.getElementById("primeiro").value);
+        const segundo = parseFloat(document.getElementById("segundo").value);
+        const divResultado = document.getElementById("resultado");
+        
+        if (isNaN(primeiro) || isNaN(segundo) || primeiro === 0 || segundo === 0) {
+                alert("Por favor, insira valores válidos para peso e altura.");
+                return;
+            }
+        let nmr = Math.floor(Math.random() * (segundo - primeiro + 1)) + primeiro;
+
+        divResultado.textContent = `:${nmr}`;
+    });
+    </script>
+</body>
+</html>
