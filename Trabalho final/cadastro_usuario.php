@@ -8,7 +8,6 @@
 <body>
     <header>
         <h1>cadastro de usuario </h1>
-        <nav>links</nav>
     </header>
     <form action="processa_cadastro.php" method="POST">
         <labeL for="nome">Nome:</label>
