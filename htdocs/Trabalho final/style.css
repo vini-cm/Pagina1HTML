@@ -1,0 +1,21 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    background-color: lightgoldenrodyellow;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2px;
+}
+
+input{
+    border: none;
+    border-radius: 10px;
+    height: 25px;
+    width: 250px;
+}

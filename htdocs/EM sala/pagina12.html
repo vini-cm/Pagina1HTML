@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    
+    <script>
+        //Código JS
+        //alert("Olá Mundão Perdido!")
+        /**
+        var i=0
+        console.log(i);
+        console.log(typeof(i))
+        i="Romulo"
+        console.log(i);
+        console.log(typeof(i))
+        document.body.style.backgroundColor="lightgray"
+        **/
+        button=document.createElement("button")
+        button.id="bnt"
+        button.innerText="Click em MiM"
+        
+        var contador =0;
+        
+        paragrafo=document.createElement("p")
+        paragrafo.style.backgroundColor="gray";
+        paragrafo.id="p"
+        paragrafo.innerText=contador
+
+        document.body.appendChild(button)
+        document.body.appendChild(paragrafo)
+        
+        
+        document.body.style.height="100vh"
+        document.body.style.display="flex"
+        document.body.style.justifyContent="center"
+        document.body.style.alignItems="center"
+        document.body.style.flexDirection="column"
+        button.addEventListener("click",()=>{
+            contador++
+            paragrafo.innerText=contador
+        })
+
+        document.body.addEventListener("click",()=>{
+            contador++
+            paragrafo.innerText=contador
+        })
+
+        
+        
+
+    </script>
+</body>
+</html>

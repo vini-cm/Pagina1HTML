@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,.container{
+            background-color: cyan; 
+            height: 100vh;
+            width: 100vw;
+        }
+        #item1{
+            position: fixed;
+            width: 10vh;
+            height: 10vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 30%;
+            animation: movimento 1s linear infinite;
+            
+        }
+        @keyframes movimento {
+            0%{top:0vh;left: 0vw; background-color:rgb(0,0,0)}
+            20%{top:0vh;left: 90vw;background-color:rgb(0,255,0)}
+            40%{top:90vh;left: 90vw;background-color:rgb(0,0,255)}
+            60%{top:90vh;left: 0vw; background-color:rgb(255,255,0)}
+            80%{top:0vh;left:0vw;background-color:rgb(255,0,0)}
+        }
+
+    </style>
+</head>
+<body>
+    <!--Faça #item1 passar pelos quatro quantes da do viewport mudando de cor de forma gradual dutante a movimentação-->
+    <div class="container">
+        <div class="box" id="item1">1</div>
+    </div>
+</body>
+</html>

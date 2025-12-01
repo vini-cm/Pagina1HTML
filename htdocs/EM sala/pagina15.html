@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador IMC</title>
+    <style>
+        input, button {
+            margin: 5px;
+            display: block;
+        }
+        img {
+            height: 150px;
+            display: block;
+            margin-top: 10px;
+        }
+        #resultado, #pesoIdeal {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculador IMC</h1>
+    <input type="number" name="peso" id="peso" placeholder="Peso (kg)">
+    <input type="number" name="altura" id="altura" placeholder="Altura (m)">
+    <button id="calcular">Calcular IMC</button>
+
+    <div id="resultado"></div>
+    <div id="pesoIdeal"></div>
+
+    <img src="./imgs/perfil.jpg" alt="">
+
+    <script>
+        let btnCalcular = document.getElementById("calcular");
+
+        btnCalcular.addEventListener("click", () => {
+            const peso = parseFloat(document.getElementById("peso").value);
+            const altura = parseFloat(document.getElementById("altura").value);
+            const img = document.querySelector("img");
+            const divResultado = document.getElementById("resultado");
+            const divPesoIdeal = document.getElementById("pesoIdeal");
+
+            if (isNaN(peso) || isNaN(altura) || altura === 0) {
+                alert("Por favor, insira valores válidos para peso e altura.");
+                return;
+            }
+
+            let imc = peso / (altura * altura);
+            imc = imc.toFixed(2);
+
+            let classificacao = "";
+
+            if (imc < 18.5) {
+                classificacao = "Abaixo do peso";
+                img.src = "abaixopeso.png";
+            } else if (imc < 24.9) {
+                classificacao = "Peso normal";
+                img.src = "normal.png";
+            } else if (imc < 29.9) {
+                classificacao = "Sobrepeso";
+                img.src = "sobrepeso.png";
+            } else if (imc < 34.9) {
+                classificacao = "Obesidade 1";
+                img.src = "obesidade1.png";
+            } else if (imc < 39.9) {
+                classificacao = "Obesidade 2";
+                img.src = "obesidade2.png";
+            } else {
+                classificacao = "Obesidade 3";
+                img.src = " obesidade3.png";
+            }
+
+            divResultado.textContent = `Seu IMC é ${imc} (${classificacao})`;
+
+            // Chamar a função para calcular peso ideal e mostrar
+            divPesoIdeal.textContent = calcularPesoIdeal(peso, altura);
+        });
+
+        function calcularPesoIdeal(peso, altura) {
+            const pesoIdeal = 24.9 * (altura * altura);
+            const diferenca = pesoIdeal - peso;
+            if (diferenca > 0) {
+                return `Você precisa ganhar ${diferenca.toFixed(2)} kg para atingir o peso ideal.`;
+            } else if (diferenca < 0) {
+                return `Você precisa perder ${Math.abs(diferenca).toFixed(2)} kg para atingir o peso ideal.`;
+            } else {
+                return `Você já está no peso ideal!`;
+            }
+        }
+    </script>
+</body>
+</html>
