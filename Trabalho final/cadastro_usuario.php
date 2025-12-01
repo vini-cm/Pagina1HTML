@@ -9,13 +9,13 @@
     <header>
         <h1>cadastro de usuario </h1>
     </header>
-    <form action="processa_cadastro.php" method="POST">
+    <form action="processacadastro.php" method="POST">
         <labeL for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
         <labeL for="login">Login:</label>
         <input type="text" id="login" name="login" required><br><br>
         <labeL for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required><br><br>
+        <input type="password" id="senha" name="senha" required><br><br>s
         <input type="submit" value="cadastrar!">
     </form>
 
