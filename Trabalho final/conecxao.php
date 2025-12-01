@@ -63,5 +63,21 @@
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    function pesquisar_usuarios($busca = null) {
+    $con = connecta_bd();
+    if ($busca) {
+        $stmt = $con->prepare("SELECT * FROM usuarios 
+                               WHERE nome LIKE :busca 
+                                  OR login LIKE :busca
+                               ORDER BY id ASC");
+        $busca = "%" . $busca . "%";
+        $stmt->bindParam(':busca', $busca);
+    } else {
+        $stmt = $con->prepare("SELECT * FROM usuarios ORDER BY id ASC");
+    }
+
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 ?>

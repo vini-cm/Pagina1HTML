@@ -20,5 +20,14 @@
         <input type="password" id="senha" name="senha" required><br><br>
         <input type="submit" value="Salvar alterações">
     </form>
+    <form action="delete_usuario.php" method="POST" onsubmit="return confirm('Realmente quer excluir?');">
+        <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+        <input type="submit" value="Apagar usuário">
+    </form> 
+    <a href="listar_usuario.php">
+        <button type="button">Cancelar</button></a>
+    <a href="listar_usuario.php">
+        <button type="button">Retornar a Listagem</button></a>
+
 </body>
 </html>
