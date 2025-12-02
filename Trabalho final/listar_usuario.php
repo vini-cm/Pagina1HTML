@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="style.css">
 <?php
 require_once "conecxao.php";
 $busca = isset($_GET['busca']) ? $_GET['busca'] : null;
@@ -37,4 +38,5 @@ $usuarios = pesquisar_usuarios($busca);?>
             </tr>
         <?php endif; ?>
     </table>
+     <a href="cadastro_usuario.php"><button type="button">Cadastrar Usuario</button></a>
 </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Usuario</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -15,8 +16,9 @@
         <labeL for="login">Login:</label>
         <input type="text" id="login" name="login" required><br><br>
         <labeL for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required><br><br>s
-        <input type="submit" value="cadastrar!">
+        <input type="password" id="senha" name="senha" required><br><br>
+        <input type="submit" value="cadastrar!" href="cadastro_usuario.php">
+        
     </form>
 
 

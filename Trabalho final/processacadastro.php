@@ -1,3 +1,4 @@
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -12,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     require_once "conecxao.php";
 
     cadastro_usuario($_POST["nome"], $_POST["login"], $_POST["senha"]);
+    header("Location: listar_usuario.php");
     exit;
 } else {
     header("Location: cadastro_usuario.php");

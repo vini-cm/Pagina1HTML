@@ -1,3 +1,4 @@
+
 <?php
      function connecta_bd(){
         $servername = "127.0.0.1";
