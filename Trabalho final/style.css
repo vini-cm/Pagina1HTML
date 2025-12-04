@@ -29,7 +29,7 @@ input{
     justify-content: center;
 }
 table {
-    border-collapse: collapse; /* remove espaçamento duplo */
+    border-collapse: collapse; 
     width: 100%;
     max-width: 800px;
     margin: 20px auto; /* centraliza a tabela */
@@ -50,10 +50,10 @@ td {
     border-bottom: 1px solid #ddd;
 }
 tbody tr:nth-child(even) {
-    background-color: #f9f9f9; /* cor alternada */
+    background-color: #f9f9f9;
 }
 tbody tr:hover {
-    background-color: #f1f1f1; /* efeito hover */
+    background-color: #f1f1f1;
 }
 td a {
     text-decoration: none;
@@ -70,8 +70,8 @@ td[colspan="4"] {
     color: #555;
 }
 .btn {
-    color: rgb(0, 0, 0);                 /* cor do texto */
-    border-radius: 5px;           /* bordas arredondadas */
+    color: rgb(0, 0, 0);         
+    border-radius: 5px;          
     font-size: 16px;
 
 }
