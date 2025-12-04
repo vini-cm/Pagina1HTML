@@ -1,0 +1,1 @@
+<?php echo "para definirmos um código PHP utilizamos as tags &lt;?php e ?&gt;."; ?>

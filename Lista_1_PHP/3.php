@@ -1,0 +1,1 @@
+<?php function Hello(){echo"HELLO";} Hello();?>

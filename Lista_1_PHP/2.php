@@ -1,0 +1,1 @@
+<?php echo "Não, o navegador envia uma requisição ao servidor e o servidor executa o código php para devolver o resultado ao navegador, php não executa códigos e nem os exibe no navegador"?>
