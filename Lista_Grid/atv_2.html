@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        * {
+            margin: 0;
+        }
+
+        body,
+        html {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 20% 20% 20% 20% 20%;
+            grid-template-areas:
+                "header header header header"
+                "nav content content content"
+                "nav content content content"
+                "nav content content content"
+                "nav footer footer footer";
+        }
+
+        #container > div {
+            position: relative;
+            font-size: 96px;
+        }
+
+        .text {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #header {
+            grid-area: header;
+            background-color: magenta;
+        }
+
+        #nav {
+            grid-area: nav;
+            background-color: yellow;
+        }
+
+        #content {
+            grid-area: content;
+            background: salmon;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .text2 {
+            text-align: center;
+        }
+
+        #actualContent {
+            width: 80%;
+            height: 50vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+                "pic pic pic pic"
+                "pic pic pic pic"
+                "a a a a"
+                "a a a a";
+            overflow: hidden;
+        }
+
+        #footer {
+            grid-area: footer;
+            background-color: green;
+        }
+
+        #imagemInterna {
+            grid-area: pic;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #textoInterno {
+            font-size: 32px;
+            grid-area: a;
+        }
+
+
+        #text3 {
+            font-size: 32px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="header">
+                <p class="text">Header</p>
+            </div>
+            <div id="nav">
+                <p class="text">Nav</p>
+            </div>
+            <div id="content">
+                <p class="text2">Content</p>
+                <div id="actualContent">
+                    <div id="imagemInterna">
+                        <img src="lorem_ipsum.png">
+                    </div>
+                    <div id="textoInterno">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit.
+                        Pariatur modi, expedita est dolorem aspernatur beatae
+                        inventore doloremque amet. Provident fugiat unde a ipsum
+                        totam dolorem ratione, ex porro expedita nam.
+                    </div>
+
+                </div>
+            </div>
+            <div id="footer">
+                <p class="text">Footer</p>
+            </div>
+
+        </div>
+    </body>
+
+</html>

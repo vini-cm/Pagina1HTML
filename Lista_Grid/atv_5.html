@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPI Hub</title>
+</head>
+<style>
+    html,
+    body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    body {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 2fr 2fr 2fr 1fr;
+        grid-template-rows: 1fr 2fr 40% 2fr 1fr;
+        grid-template-areas:
+            "header header header header header"
+            "barral maincontainer maincontainer maincontainer maincontainer"
+            "barral maincontainer maincontainer maincontainer maincontainer"
+            "barral maincontainer maincontainer maincontainer maincontainer"
+            "footer footer footer footer footer"
+    }
+
+    #header {
+        grid-area: header;
+        background-color: rgb(148, 0, 0);
+        color: white;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    #maincontainer {
+        grid-area: maincontainer;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    #footer {
+        grid-area: footer;
+        background: rgb(148, 0, 0);
+        color: white;
+        font-size: 24px;
+        text-align: center;
+    }
+
+
+    #barral {
+        grid-area: barral;
+        background-color: rgb(0, 229, 255);
+    }
+</style>
+
+<body>
+    <div id="header">Site super legal para aprender HTML</div>
+    <div id="barral">
+        <ol>
+            <li><a href="https://pt.wikipedia.org/wiki/World_Wide_Web">Web</a></li>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">HTML</a></li>
+            <li><a href="https://git-scm.com/about">Git</a></li>
+            <li><a href="https://www.w3schools.com/css/">CSS</a></li>
+            <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">Javascript</a></li>
+            <li><a href="https://www.php.net/docs.php">PHP</a></li>
+        </ol>
+    </div>
+    <div id="maincontainer">
+        <h1>PPI Hub</h1>
+        <p>Essa página é altamente responsiva pois se utiliza de um layout desenvolvido com grid, ao seu lado
+            direito você vai encontrar uma lista de links que podem te ajudar a fazer sites semelhantes, se não iguais a
+            este, pois
+            lá estão contidos conhecimentos de todo um semestre de Programação para Internet que tive com o
+            excelentíssimo professor
+            Romulo Beninca de Aguiar. Através das aulas aprendi conceitos de web, como estruturar o site através de
+            HTML, salvá-lo
+            e versioná-lo com Git, estilizá-lo e torná-lo responsivo e dinâmico com CSS, como aplicar lógica de
+            programação para dar
+            a ele funcionalidades com Javascript e por fim, como fazer seu Backend, isto é, a parte do servidor,
+            utilizando a poderosa
+            linguagem PHP.</p>
+    </div>
+    <div id="footer">Feito amorosamente com sangue, suor e lágrimas por Arthur Pereira. Nenhum direito reservado🥀</div>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+        body, html {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-areas:
+            "a a . b"
+            "c z z z"
+            "c z z z"
+            ;
+        }
+
+        #subcontainer {
+            display: grid;
+            width: 90%;
+            height: 90%;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-template-areas: 
+            "e f f g"
+            "m i i j"
+            ;
+        }
+
+        #subcontainer > div {
+            margin: 8px;
+        }
+
+        #a {
+            grid-area: a;
+        }
+
+        #b {
+            grid-area: b;
+        }
+
+        #c {
+            grid-area: c;
+        }
+
+        #z {
+            grid-area: z;
+        }
+
+        #e {
+            grid-area: e;
+        }
+
+        #f {
+            grid-area: f;
+        }
+
+        #i {
+            grid-area: i;
+        }
+
+        #g {
+            grid-area: g;
+        }
+
+        #m {
+            grid-area: m;
+        }
+
+        #j {
+            grid-area: j;
+        }
+
+
+        .grande {
+            background-color: rgb(46, 46, 46);
+            color: white;
+            margin: 20px;
+            border-radius: 3%;
+        }
+
+        .pequeno {
+            background-color: lightgray;
+            color: gray;
+            margin: 20px
+        }
+    </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="a" class="grande"><p>A</p></div>
+            <div id="b" class="grande"><p>B</p></div>
+            <div id="c" class="grande"><p>C</p></div>
+            <div id="z" class="grande content">
+                <div id="subcontainer">
+                    <div id="e" class="pequeno"><p>E</p></div>
+                    <div id="f" class="pequeno"><p>F</p></div>
+                    <div id="g" class="pequeno"><p>G</p></div>
+                    <div id="m" class="pequeno"><p>M</p></div>
+                    <div id="i" class="pequeno"><p>I</p></div>
+                    <div id="j" class="pequeno"><p>J</p></div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>
