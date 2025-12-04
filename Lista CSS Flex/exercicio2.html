@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #bloco{
+            background-color: grey;
+            width: 60%;
+            height: 50%;
+
+        }
+
+        .linha{
+            border-radius: 2px;
+            height: 20px;
+            background-color: antiquewhite;
+            width: 100%;
+        }
+
+        body { height: 100vh; 
+            display: flex;
+            font-family: Arial;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+           width: 50%;
+           height: 50%;
+           background-color: rgb(255, 255, 255); 
+           box-shadow: 0 4px 8px rgb(75, 75, 75);
+           left: 70%;
+           top: 50%;
+           display: flex;
+           transform: translate(50%, 50%) ;
+        }
+
+        p{
+            color: rgb(64, 121, 172);
+            display: flex;
+            justify-content:center ;
+            align-items: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <p id="titulo">Company Logo</p>
+
+    <div id="bloco">
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+        <div class="linha"></div>
+    </div>
+
+    <div id="round"></div>
+
+    <div id="descricao"></div>
+    </div>
+</body>
+</html>
