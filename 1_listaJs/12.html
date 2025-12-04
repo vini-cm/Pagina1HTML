@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Digite seu nome">
+    <button id="saveButton">Salvar</button>
+    <p id="greeting"></p>
+
+    <script>
+
+    const input = document.getElementById("nameInput");
+    const button = document.getElementById("saveButton");
+    const greeting = document.getElementById("greeting");
+
+    const nome = localStorage.getItem("nome");
+
+    if (nome) {
+        greeting.textContent = "Olá, " + nome + "!";
+    }
+
+    button.addEventListener("click", () => {
+        const nome = input.value;
+
+        if (nome.trim() === "") {
+            alert("Digite um nome primeiro!");
+            return;
+        }
+
+        localStorage.setItem("nome", nome);
+        greeting.textContent = "Olá, " + nome + "!";
+    });
+
+    </script>
+
+</body>
+</html>

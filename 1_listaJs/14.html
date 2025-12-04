@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Captura de Teclas do Teclado</title>
+    <style>
+        #saida {
+            margin-top: 20px;
+            padding: 10px;
+            width: 1230px;
+            height: 500px;
+            font-size: 22px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Captura de Teclas do Teclado</h1>
+
+    <div id="saida"></div>
+
+    <script>
+        const saida = document.getElementById("saida");
+        let texto = "";
+
+        document.addEventListener("keydown", function(event) {
+
+            console.log("Tecla pressionada:", event.key);
+
+            if (event.key === "Backspace") {
+                texto = texto.slice(0, -1);  
+                saida.textContent = texto;
+                return;
+            }
+
+            let caractere = `${event.key} (${event.code}) `;
+
+            texto += caractere;
+            saida.textContent = texto;
+        });
+    </script>
+
+</body>
+</html>

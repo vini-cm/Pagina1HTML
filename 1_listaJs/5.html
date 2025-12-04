@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+</head>
+<body>
+    <h1>Sorteio de Números</h1>
+    <span>Mínimo</span> <input type="number" id="minimo">
+    <p></p>
+    <span>Máximo</span> <input type="number" id="maximo">
+    <p></p>
+    <button onclick="sortear()">Sortear</button>
+    <p></p>
+    <p id="resultado"></p>
+    <p></p>
+    <p></p>
+    <h2>Números sorteados</h2>
+    <ul id="sorteados"></ul>
+
+    <script>
+
+        let numerosSorteados=[];
+
+        function sortear(){
+
+            const minimo = parseInt(document.getElementById("minimo").value);
+            const maximo = parseInt(document.getElementById("maximo").value);
+           
+            const numeroSorteado = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+
+            numerosSorteados.push(numeroSorteado);
+            let p = document.createElement("p");
+            p.innerHTML = numeroSorteado;
+            sorteados.appendChild(p);
+
+            if (!minimo || !maximo){
+                resultado.textContent = "Os campos não podem ser nulos";
+                return;
+            }
+
+            if (minimo >= maximo){
+                resultado.textContent = "Sorteio indisponível";
+                return;
+            }
+
+            resultado.textContent = "O número sorteado é: " + numeroSorteado;
+        }
+
+    </script>
+
+</body>
+</html>

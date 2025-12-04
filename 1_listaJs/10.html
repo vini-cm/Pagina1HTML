@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body {
+            background: #a1caee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .calc {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            width: 260px;
+            box-shadow: 0px 0px 10px #00000055;
+        }
+
+        #display {
+            background: #333;
+            color: white;
+            height: 60px;
+            font-size: 32px;
+            text-align: right;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            text-align: center;
+            padding: 15px;
+            font-size: 22px;
+            background: #f7f7f7;
+            border-radius: 5px;
+        }
+
+        td:active {
+            background: #ddd;
+        }
+
+        .igual {
+            background: #ff7f50;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calc">
+        <div id="display">0</div>
+
+        <table>
+            <tr>
+                <td onclick="Operacao('+')">+</td>
+                <td onclick="Operacao('-')">-</td>
+                <td onclick="Operacao('*')">x</td>
+                <td onclick="Operacao('/')">/</td>
+            </tr>
+
+            <tr>
+                <td onclick="Numero('7')">7</td>
+                <td onclick="Numero('8')">8</td>
+                <td onclick="Numero('9')">9</td>
+                <td rowspan="4" class="igual" onclick="Calcular()">=</td>
+            </tr>
+
+            <tr>
+                <td onclick="Numero('4')">4</td>
+                <td onclick="Numero('5')">5</td>
+                <td onclick="Numero('6')">6</td>
+            </tr>
+
+            <tr>
+                <td onclick="Numero('1')">1</td>
+                <td onclick="Numero('2')">2</td>
+                <td onclick="Numero('3')">3</td>
+            </tr>
+
+            <tr>
+                <td onclick="Numero('0')">0</td>
+                <td onclick="Numero('.')">.</td>
+                <td onclick="Limpar()">AC</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let display = document.getElementById("display");
+        let expressao = "";
+
+        function Numero(num) {
+            if (display.innerText === "0") {
+                display.innerText = num;
+            } else {
+                display.innerText += num;
+            }
+        }
+
+        function Operacao(op) {
+            expressao = display.innerText + " " + op + " ";
+            display.innerText = "";
+        }
+
+        function Calcular() {
+            expressao += display.innerText;
+            try {
+                let resultado = eval(expressao);
+                display.innerText = resultado;
+            } catch {
+                display.innerText = "Erro";
+            }
+        }
+
+        function Limpar() {
+            display.innerText = "0";
+            expressao = "";
+        }
+    </script>
+
+</body>
+</html>
